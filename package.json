@@ -1,0 +1,37 @@
+{
+  "name": "data-telemetry",
+  "version": "0.0.0",
+  "description": "A simple event tracker for user surfing sessions",
+  "main": "cjs/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run rollup:new && npm run rollup:babel && npm run min && npm run test",
+    "cjs": "ascjs esm cjs",
+    "rollup:new": "rollup --config rollup/new.config.js",
+    "rollup:babel": "rollup --config rollup/babel.config.js",
+    "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "test": "istanbul cover test/index.js"
+  },
+  "keywords": [
+    "telemetry",
+    "user",
+    "browser",
+    "navigation",
+    "session"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "ascjs": "^3.0.1",
+    "basichtml": "^1.1.1",
+    "istanbul": "^0.4.5",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "uglify-js": "^3.6.0"
+  },
+  "module": "esm/index.js",
+  "unpkg": "min.js"
+}
