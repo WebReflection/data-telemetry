@@ -32,9 +32,10 @@ session.handleEvent(event);
 session.handleEvent(event);
 
 const all = JSON.parse(JSON.stringify(session));
-console.assert(all.length === 1, 'only one move event expected');
+console.log(all);
+console.assert(all.events.length === 1, 'only one move event expected');
 
-const result = all.pop();
+const result = all.events.pop();
 console.assert(result.target === '#da-body.test.more', 'correct target');
 console.assert(result.type === 'move', 'correct type');
 console.assert(/^[0-9.]+$/.test(result.time), 'correct time');

@@ -122,7 +122,10 @@ var dataTelemetry = (function (exports) {
     }, {
       key: "toJSON",
       value: function toJSON() {
-        return this.events;
+        return {
+          root: asCSS(this.root),
+          events: this.events
+        };
       }
     }]);
 

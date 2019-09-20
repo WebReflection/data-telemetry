@@ -80,6 +80,9 @@ export class Session {
     events.push(record);
   }
   toJSON() {
-    return this.events;
+    return {
+      root: asCSS(this.root),
+      events: this.events
+    };
   }
 };
