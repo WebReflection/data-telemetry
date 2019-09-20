@@ -1,6 +1,6 @@
 {
   "name": "data-telemetry",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A simple event tracker for user surfing sessions",
   "main": "cjs/index.js",
   "scripts": {
