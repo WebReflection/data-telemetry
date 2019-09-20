@@ -9,6 +9,7 @@
     "rollup:new": "rollup --config rollup/new.config.js",
     "rollup:babel": "rollup --config rollup/babel.config.js",
     "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "test": "istanbul cover test/index.js"
   },
   "keywords": [
@@ -33,5 +34,14 @@
     "uglify-js": "^3.6.0"
   },
   "module": "esm/index.js",
-  "unpkg": "min.js"
+  "unpkg": "min.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/data-telemetry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/data-telemetry/issues"
+  },
+  "homepage": "https://github.com/WebReflection/data-telemetry#readme"
 }
