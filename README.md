@@ -1,5 +1,7 @@
 # data-telemetry
 
+[![Build Status](https://travis-ci.com/WebReflection/data-telemetry.svg?branch=master)](https://travis-ci.com/WebReflection/data-telemetry) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/flatted/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/flatted?branch=master)
+
 A simple event tracker for user surfing sessions.
 
 ```js
