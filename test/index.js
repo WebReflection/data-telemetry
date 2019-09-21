@@ -5,6 +5,7 @@ document.body.classList.add('test', 'more');
 document.querySelectorAll = function () {
   return [document.body];
 };
+Object.prototype.closest = () => ({id: 'parent'});
 
 const {Session} = require('../cjs');
 

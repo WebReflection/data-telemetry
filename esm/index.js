@@ -1,5 +1,12 @@
 const asCSS = el => {
-  const details = [el.id ? `#${el.id}` : el.nodeName.toLowerCase()];
+  const details = [];
+  if (el.id)
+    details.push(`#${el.id}`);
+  else {
+    const parent = el.closest('[id]');
+    const id = parent ? `#${parent.id} ` : '';
+    details.push(id + el.nodeName.toLowerCase());
+  }
   details.push.apply(details, el.classList);
   return details.join('.');
 };

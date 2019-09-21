@@ -24,7 +24,12 @@ var dataTelemetry = (function (exports) {
   }
 
   var asCSS = function asCSS(el) {
-    var details = [el.id ? "#".concat(el.id) : el.nodeName.toLowerCase()];
+    var details = [];
+    if (el.id) details.push("#".concat(el.id));else {
+      var parent = el.closest('[id]');
+      var id = parent ? "#".concat(parent.id, " ") : '';
+      details.push(id + el.nodeName.toLowerCase());
+    }
     details.push.apply(details, el.classList);
     return details.join('.');
   };
