@@ -27,6 +27,8 @@ The session is serializable as JSON too via `JSON.stringify(session)`, resulting
 
 `cancel`, `down`, `enter`, `leave`, `move`, `out`, `over`, and `up` are automatically transformed via `mouse` or `pointer` prefix.
 
+The value `all` will try to setup all possible events per element.
+
 To enable any telemetry event, use the `data-telemetry` attribute as shown in the following example:
 
 ```html
