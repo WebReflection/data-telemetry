@@ -40,3 +40,7 @@ const result = all.events.pop();
 console.assert(result.target === '#da-body.test.more', 'correct target');
 console.assert(result.type === 'move', 'correct type');
 console.assert(/^[0-9.]+$/.test(result.time), 'correct time');
+
+document.body.dataset.telemetry = 'all';
+document.body.onwhatever = null;
+session = new Session();

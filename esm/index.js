@@ -45,12 +45,20 @@ export class Session {
       for (let i = 0, {length} = telemetry; i < length; i++)
       {
         const type = telemetry[i];
-        el.addEventListener(
-          types.hasOwnProperty(type) ?
-            types[type](pointerEvents) : type,
-          this,
-          true
-        );
+        if (type === 'all') {
+          for (let key in el) {
+            if (/^on/.test(key))
+              el.addEventListener(key, this, true);
+          }
+        }
+        else {
+          el.addEventListener(
+            types.hasOwnProperty(type) ?
+              types[type](pointerEvents) : type,
+            this,
+            true
+          );
+        }
       }
     }
   }

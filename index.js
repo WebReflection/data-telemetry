@@ -85,7 +85,14 @@ var dataTelemetry = (function (exports) {
 
         for (var _i = 0, _length = telemetry.length; _i < _length; _i++) {
           var type = telemetry[_i];
-          el.addEventListener(types.hasOwnProperty(type) ? types[type](pointerEvents) : type, this, true);
+
+          if (type === 'all') {
+            for (var key in el) {
+              if (/^on/.test(key)) el.addEventListener(key, this, true);
+            }
+          } else {
+            el.addEventListener(types.hasOwnProperty(type) ? types[type](pointerEvents) : type, this, true);
+          }
         }
       }
     }
